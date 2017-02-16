@@ -30,16 +30,17 @@ $ docker run --rm -v `pwd`:/workspace sw00/ansible all -i /workspace/hosts.ini -
 
 ### Tip
 
-Wrap the tedious commands in shellscripts to make your life easier.
+Wrap the tedious commands in [shellscripts](https://github.com/sw00/docker-ansible/tree/master/bin) to make your life easier.
 
 ```SHELL
 # ansible.sh
 #!/bin/sh
 
-docker run --rm -v `pwd`:/workspace sw00/ansible $@
+docker run --rm -it -v `pwd`:/workspace sw00/ansible $@
 ```
 
 Usage: `./ansible.sh all -i inventory.ini --list-hosts`
+
 
 ## Why?
 

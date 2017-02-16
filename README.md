@@ -28,6 +28,19 @@ You can mount the current directory inside the container to utilise playbooks ot
 $ docker run --rm -v `pwd`:/workspace sw00/ansible all -i /workspace/hosts.ini -m ping
 ```
 
+### Tip
+
+Wrap the tedious commands in shellscripts to make your life easier.
+
+```SHELL
+# ansible.sh
+#!/bin/sh
+
+docker run --rm -v `pwd`:/workspace sw00/ansible $@
+```
+
+Usage: `./ansible.sh all -i inventory.ini --list-hosts`
+
 ## Why?
 
 Fed up with trying to install Ansible on OSX with `pip` because it fails

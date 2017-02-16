@@ -5,6 +5,4 @@ RUN apk add --update --no-cache \
 	build-base python2 python2-dev py2-pip libffi-dev openssl-dev
 RUN pip install -U ansible
 
-VOLUME /playbooks
-
-CMD ['/usr/bin/ansible']
+ENTRYPOINT ["/usr/bin/ansible"]
